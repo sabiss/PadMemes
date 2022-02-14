@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "reset.css">
+    <link rel = "stylesheet" href = "style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel = "icon" href = "Imgs/icons8-dj-64.png">
+    <title>PadMemes</title>
+</head>
+<body>
+    <div class = "imagens-container">
+        <img class = "inezBrasil-img foto" alt = "Foto da Inêz Brasil" src="Imgs/InêzBrasil.png">
+        <img class = "flay-img foto" alt = "Foto da Flayane do BBB20" src="Imgs/flay.png">
+        <img class = "juliette-img foto" alt = "Foto da Juliette" src="Imgs/juliette.png">
+        <img class = "karolkonka-img foto" alt = "Foto da Karol Kanká" src="Imgs/KarolKonka.png">
+        <img class = "reginaRouca-img foto" alt = "Foto da Regina rouca do tiktok" src="Imgs/reginaRouca.png">
+        <img class = "inezBrasil-img foto" alt = "Foto do homem do meme 'Não, nada aver irmão'" src="Imgs/nadaAverIrmao.png">
+        <img class = "inezBrasil-img foto" alt = "Foto da Melody" src="Imgs/melody.png">
+        <img class = "inezBrasil-img foto" alt = "Foto de Juninho Caldeirão do tiktok" src="Imgs/juniorCadeldeirao.png">
+        <img class = "inezBrasil-img foto" alt = "Foto da Ygona" src="Imgs/ygona.png">
+    </div>
+    
+
+        <div class = "container">
+            <div class = "btn-formatacao" onclick="tocar('som-inez')"><p>Inêz Brasil</p></div>        
+            <div class = "btn-formatacao" onclick="tocar('som-flay')"><p>Flay</p></div>        
+            <div class = "btn-formatacao" onclick="tocar('som-juliette')"><p>Juliette</p></div>        
+            <div class = "btn-formatacao" onclick="tocar('som-karol')"><p>Karol Konká</p></div>        
+            <div class = "btn-formatacao" onclick="tocar('som-regina')"><p>Regina Rouca</p></div>        
+            <div class = "btn-formatacao" onclick="tocar('som-nadaAverIrmao')"><p>Nada Aver Irmão</p></div>        
+            <div class = "btn-formatacao" onclick="tocar('som-melody')"><p>Melody</p></div>        
+            <div class = "btn-formatacao" onclick="tocar('som-juninhoCaldeirao')"><p>Junior Caldeirão</p></div>        
+            <div class = "btn-formatacao" onclick="tocar('som-ygona')"><p>Ygona</p></div>
+
+            <div class = "sons-container">
+                <audio class = "sons-memes som-inez" src="audios/gritoDaPanteraInezBrasil.mp3"></audio>
+                <audio class = "sons-memes som-flay" src="audios/vamosGaleraMulheres.mp3"></audio>
+                <audio class = "sons-memes som-juliette" src="audios/meuPovoCuscuzTaPronto.mp3"></audio>
+                <audio class = "sons-memes som-karol" src="audios/respeitaAMamacita.mp3"></audio>
+                <audio class = "sons-memes som-regina" src="audios/seLigaHein.mp3"></audio>
+                <audio class = "sons-memes som-nadaAverIrmao" src="audios/nadaHaverIrmão.mp3"></audio>
+                <audio class = "sons-memes som-melody" src="audios/modaDoFalsete.mp3"></audio>
+                <audio class = "sons-memes som-juninhoCaldeirao" src="audios/seVoceTemUmSonho.mp3"></audio>
+                <audio class = "sons-memes som-ygona" src="audios/partiuAglomerar.mp3"></audio>
+            </div>
+        </div>
+
+        <div class = "botao-forms">Adicione seu meme</div>
+
+        <form>
+            <label for = "nome">Nome que aparecerá no botão</label>
+            <input type="text" id = "nome" class ="inputs" placeholder="Digite" required>
+            <label for = "audio">Audio que será reproduzido</label>
+            <input type="file" id = "audio" class ="inputs" accept="audio/*" required>
+            <label for="imagem">Imagem que irá aparecer</label>
+            <input type="file" id = "imagem" accept="image/*" required>
+            <label for = "cor">Escolha a cor do botão</label>
+            <input type="color" id = "cor" required>
+            <input type="button" id = "adicionar" value = "adicionar">
+        </form>
+    
+    <script src = "main.js"></script>
+</body>
+</html>
