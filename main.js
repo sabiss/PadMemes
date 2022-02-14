@@ -27,6 +27,8 @@ function tocar(som){
         if(som == padMemes.lista[i]){ //procura o som
             if(verificador == 0 || i == 0){//verifica se é o 1° som tocado ou é o som da posição 0 da lista_sons
                 if(ultimoValorI != null){//se ultimoValorI for diferente de null quer dizer que ja foi tocado um som e tem uma imagem na tela
+                    padMemes.sons[ultimoValorI].pause()
+                    padMemes.sons[ultimoValorI].currentTime = 0;
                     padMemes.imagens[ultimoValorI].style.display = 'none'//tira essa ultima imagem da tela
                     padMemes.imagens[i].style.display = 'flex'//coloca a nova imagem
                     padMemes.sons[i].play()// toca o som correspondente a imagem
@@ -43,6 +45,8 @@ function tocar(som){
                 }
             }
             else{//não é o 1° som/imagem a ser reproduzido
+                padMemes.sons[ultimoValorI].pause()
+                padMemes.sons[ultimoValorI].currentTime = 0;
                 padMemes.imagens[ultimoValorI].style.display = 'none';
                 padMemes.imagens[i].style.display = 'flex';
                 padMemes.sons[i].play()
