@@ -65,6 +65,10 @@ showForms.addEventListener("click", ()=>{
 
 const adicionar = document.querySelector("input#adicionar")
 
+function atribuir(elemento){
+    elemento.src = URL.createObjectURL(event.target.files[0])
+}
+
 let botao_adicionado = null
 adicionar.addEventListener("click", ()=>{
     let input_nome = document.querySelector("input#nome").value//pegando valores dos inputs
@@ -87,13 +91,13 @@ adicionar.addEventListener("click", ()=>{
     container_botoes.appendChild(div)
 
     imagem = document.createElement("img")
-    imagem.src = input_imagem
+    imagem.addEventListener("onchange", atribuir(imagem))
     imagem.classList.toggle("foto")
     const container_img = document.querySelector("div.imagens-container")
     container_img.appendChild(imagem)
 
     audio = document.createElement("AUDIO")
-    audio.src = input_audio
+    audio.addEventListener("onchange", atribuir(audio))
     audio.classList.toggle(input_nome)
     const container_sons = document.querySelector("div.sons-container")
     container_sons.appendChild(audio)
