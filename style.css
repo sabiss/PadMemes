@@ -1,0 +1,385 @@
+:root{
+    --amarelo: #ffb703;
+    --vermelho: #c70505;
+    --azul: #0466c8;
+    --azul-claro:#60bdf7;
+    --roxo: #e449ff;
+    --verde: #34ce2f;
+    --laranja: #e85d04;         
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+    padding: 40px 0px;
+    font-family: 'Bebas Neue', cursive;
+    background:url('Imgs/background-mobile.jpg')center / cover no-repeat;
+}
+img{
+    display: none;
+    height: 300px;
+    animation: surgir 1.2s ease-in-out;
+}
+.container{
+    height: auto;
+    width: 600px;
+    background-color: rgba(18, 25, 39, 0.8);
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: space-evenly;
+}
+.btn-formatacao{
+    margin: 20px;
+    width: 120px;
+    height: 110px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.btn-formatacao:hover{
+    cursor: pointer;
+}
+.container > div:first-child{
+    background-color: var(--amarelo)
+}
+.container > div:first-child:hover{
+    cursor: pointer;
+    background-color: #ffae00;
+}
+
+.container > div:nth-child(2){
+    background-color: var(--vermelho);
+}
+.container > div:nth-child(2):hover{
+    cursor: pointer;
+    background-color: #b30606;
+}
+
+.container > div:nth-child(3){
+    background-color: var(--azul);
+}
+.container > div:nth-child(3):hover{
+    cursor: pointer;
+    background-color: #035db6;
+}
+
+.container > div:nth-child(4){
+    background-color: var(--roxo);
+}
+.container > div:nth-child(4):hover{
+    cursor: pointer;
+    background-color: #cb35e6;
+}
+
+.container > div:nth-child(5){
+    background-color: var(--azul-claro);
+}
+.container > div:nth-child(5):hover{
+    cursor: pointer;
+    background-color: #4ea7df;
+}
+
+.container > div:nth-child(6){
+    background-color: var(--verde);
+}
+.container > div:nth-child(6):hover{
+    cursor: pointer;
+    background-color: #39d334;
+}
+
+.container > div:nth-child(7){
+    background-color: var(--laranja);
+}
+.container > div:nth-child(7):hover{
+    cursor: pointer;
+    background-color: #c44e05;
+}
+
+.container > div:nth-child(8){
+    background-color: var(--roxo);
+}
+.container > div:nth-child(8):hover{
+    cursor: pointer;
+    background-color: #cb35e6;
+}
+
+.container > div:nth-child(9){
+    background-color: var(--azul);
+}
+.container > div:nth-child(9):hover{
+    cursor: pointer;
+    background-color: #035db6;
+}
+.botao-forms{
+    margin-top: 20px;
+    width: 100px;
+    height: 50px;
+    background-color: #6d3eca;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.botao-forms:hover{
+    cursor: pointer;
+    animation-name: tremidaBotao;
+    animation: tremidaBotao 2s ease-in-out infinite reverse;
+}
+.botao-forms:active{
+    background-color: #6038af;
+}
+form{
+    margin-top: 20px;
+    background-color: rgba(124, 255, 196, 0.7);
+    border-radius: 20px;
+    display: none;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
+    padding: 20px;
+    align-items: center;
+}
+label{
+    font-size: 1.3rem;
+}
+.inputs{
+    width: 50%;
+    height: 25px;
+    margin-bottom: 20px;
+}
+input[type="text"]{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    text-align: center;
+    
+}
+input[type="text"]::placeholder{
+    color: rgb(26, 25, 25);
+
+}
+#cor{
+    width: 50%;
+    height: 60px;
+    margin-bottom: 20px;
+}
+#adicionar{
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #256EFF;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 10px;
+    text-align: center;
+}
+#adicionar:hover{
+    background-color: #1f5dd8;
+}
+@keyframes surgir{
+    to{
+        opacity: 1;
+    }
+    from{
+        opacity: 0;
+    }
+}
+@keyframes tremidaBotao{
+    0%{
+        transform: rotate(10deg)
+    }
+    50%{
+        transform: rotate(-10deg);
+    }
+    100%{
+        transform: rotate(10deg);
+    }
+}
+@media only screen and (max-width:500px){
+    .container{
+        width: 250px;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .btn-formatacao{
+        width: 150px;
+        height: 120px;
+    }
+    img{
+        width: 320px;
+    }
+    body{
+        background: url('Imgs/background-mobile.jpg') center / cover;
+    }
+    .botao-forms{
+        width: 150px;
+        font-size: 1.3rem;
+    }
+    form{
+        width: 250px;
+    }
+}
+@media only screen and (min-width:501px) and (max-width: 750px){
+    .container{
+        width: 400px;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .btn-formatacao{
+        width: 150px;
+        height: 120px;
+    }
+    img{
+        width: 320px;
+    }
+    body{
+        background: url('Imgs/background-mobile.jpg') center / cover;
+    }
+    .botao-forms{
+        width: 150px;
+        font-size: 1.3rem;
+    }
+}
+@media only screen and (min-width:751px) and (max-width: 950px){
+    .container{
+        width: 500px;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .btn-formatacao{
+        width: 150px;
+        height: 120px;
+    }
+    img{
+        width: 320px;
+    }
+    body{
+        background: url('Imgs/background-mobile.jpg') center / cover;
+    }
+    .botao-forms{
+        width: 150px;
+        font-size: 1.3rem;
+    }
+}
+@media only screen and (min-width:951px) and (max-width: 1400px){
+    .container{
+        width: 700px;
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .btn-formatacao{
+        width: 150px;
+        height: 120px;
+    }
+    img{
+        width: 320px;
+    }
+    body{
+        background: url('Imgs/background-mobile.jpg') center / cover;
+    }
+    .botao-forms{
+        width: 150px;
+        font-size: 1.3rem;
+    }
+}
+@media only screen and (min-width:1440px) and (max-width: 1900px){
+    .botao-forms{
+        font-size: 1.5rem;
+        width: 200px;
+    }
+    .botao-forms{
+        font-size: 1.5rem;
+    }
+    .btn-formatacao{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    label{
+        font-size: 1.5rem;
+    }
+    input{
+        font-size: 1.1rem;
+    }
+    img{
+        width: auto;
+    }
+}
+@media only screen and (min-width:1901px) and (max-width: 2099px){
+    .container{
+        width: 900px;
+    }
+    .btn-formatacao{
+        width: 200px;
+        font-size: 1.8rem;
+    }
+    .botao-forms{
+        font-size: 1.5rem;
+        width: 200px;
+    }
+    .botao-forms{
+        font-size: 1.5rem;
+    }
+    .btn-formatacao{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    label{
+        font-size: 1.5rem;
+    }
+    input{
+        font-size: 1.1rem;
+    }
+    img{
+        width: auto;
+    }
+}
+@media only screen and (min-width:2100px){
+    .container{
+        width: 900px;
+    }
+    .btn-formatacao{
+        width: 200px;
+        font-size: 1.8rem;
+    }
+    .botao-forms{
+        font-size: 1.5rem;
+        width: 200px;
+    }
+    .botao-forms{
+        font-size: 1.7rem;
+    }
+    .btn-formatacao{
+        font-size: 1.8rem;
+        text-align: center;
+    }
+    label{
+        font-size: 1.5rem;
+    }
+    input{
+        font-size: 1.1rem;
+    }
+    img{
+        width: auto;
+    }
+    #adicionar{
+        font-size: 1.7rem;
+        height: 50px;
+    }
+    form{
+        width: 700px;
+    }
+    label{
+        font-size: 1.7rem;
+    }
+}
+
+
+
+
