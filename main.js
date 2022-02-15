@@ -22,7 +22,10 @@ let verificador = 0;
 let ultimoValorI = null
 function tocar(som){
     console.log("entrou no tocar")
-    window.scrollTo()
+    window.scrollTo({//quando tocar em um botão a tela scrolla pra cima para o usuário ver a imagem
+        top:0,
+        behavior: 'smooth'
+    })
     for(let i = 0; i < sons.length; i++){
         if(som == padMemes.lista[i]){ //procura o som
             if(verificador == 0 || i == 0){//verifica se é o 1° som tocado ou é o som da posição 0 da lista_sons
@@ -65,12 +68,22 @@ showForms.addEventListener("click", ()=>{
 
 const adicionar = document.querySelector("input#adicionar")
 
+let input_audio = document.querySelector("input#audio").value
+let input_imagem = document.querySelector("input#imagem").value
+function visualizar(){
+    input_imagem.src = URL.createObjectURL(event.target.files[0])
+}
+
+function ouvir(){
+    input_audio.src = URL.createObjectURL(event.target.files[0])
+}
+
 let botao_adicionado = null
 adicionar.addEventListener("click", ()=>{
     let input_nome = document.querySelector("input#nome").value//pegando valores dos inputs
-    let input_audio = document.querySelector("input#audio").value
+    
     let input_cor = document.querySelector("input#cor").value
-    let input_imagem = document.querySelector("input#imagem").value
+    
     
 
     
@@ -90,17 +103,12 @@ adicionar.addEventListener("click", ()=>{
 
     imagem = document.createElement("img")
     imagem.classList.toggle("foto")
-    input_imagem.addEventListener("onchange", ()=>{
-        imagem.src = URL.createObjectURL(event.target.files[0])
-    })
     const container_img = document.querySelector("div.imagens-container")
     container_img.appendChild(imagem)
 
     audio = document.createElement("AUDIO")
+    audio.src = input_audio
     audio.classList.toggle(input_nome)
-    input_audio.addEventListener("onchange", ()=>{
-        audio.src = URL.createObjectURL(event.target.files[0])
-    })
     const container_sons = document.querySelector("div.sons-container")
     container_sons.appendChild(audio)
 
