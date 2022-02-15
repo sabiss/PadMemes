@@ -65,16 +65,14 @@ showForms.addEventListener("click", ()=>{
 
 const adicionar = document.querySelector("input#adicionar")
 
-function atribuir(elemento){
-    elemento.src = URL.createObjectURL(event.target.files[0])
-}
-
 let botao_adicionado = null
 adicionar.addEventListener("click", ()=>{
     let input_nome = document.querySelector("input#nome").value//pegando valores dos inputs
     let input_audio = document.querySelector("input#audio").value
     let input_cor = document.querySelector("input#cor").value
     let input_imagem = document.querySelector("input#imagem").value
+    
+
     
     document.querySelector("form").style.display = 'none'
     padMemes.addSom(String(input_nome))
@@ -91,14 +89,18 @@ adicionar.addEventListener("click", ()=>{
     container_botoes.appendChild(div)
 
     imagem = document.createElement("img")
-    imagem.addEventListener("onchange", atribuir(imagem))
     imagem.classList.toggle("foto")
+    input_imagem.addEventListener("onchange", ()=>{
+        imagem.src = URL.createObjectURL(event.target.files[0])
+    })
     const container_img = document.querySelector("div.imagens-container")
     container_img.appendChild(imagem)
 
     audio = document.createElement("AUDIO")
-    audio.addEventListener("onchange", atribuir(audio))
     audio.classList.toggle(input_nome)
+    input_audio.addEventListener("onchange", ()=>{
+        audio.src = URL.createObjectURL(event.target.files[0])
+    })
     const container_sons = document.querySelector("div.sons-container")
     container_sons.appendChild(audio)
 
