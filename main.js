@@ -68,50 +68,59 @@ showForms.addEventListener("click", ()=>{
 
 const adicionar = document.querySelector("input#adicionar")
 
-let input_audio = document.querySelector("input#audio").value
-let input_imagem = document.querySelector("input#imagem").value
-function visualizar(){
-    input_imagem.src = URL.createObjectURL(event.target.files[0])
-}
+let input_audio = document.querySelector("input#audio")
+let input_imagem = document.querySelector("input#imagem")
 
-function ouvir(){
-    input_audio.src = URL.createObjectURL(event.target.files[0])
-}
+var uploadAudio = ""
+var uploadImg = ""
+input_audio.addEventListener("change", function(){
+    const reader = new FileReader()//criou um leitor de arquivo
+    reader.addEventListener("load", ()=>{//quando esse leitor carregar o arquivo
+    uploadAudio = reader.result//pega o resultado desse arquivo
+    console.log(uploadAudio)
+    })
+})
+input_imagem.addEventListener("change", function(){
+    const reader = new FileReader()
+    reader.addEventListener("load", ()=>{
+    uploadImg = reader.result
+    })
+})
 
-let botao_adicionado = null
 adicionar.addEventListener("click", ()=>{
     let input_nome = document.querySelector("input#nome").value//pegando valores dos inputs
-    
     let input_cor = document.querySelector("input#cor").value
-    
-    
-
     
     document.querySelector("form").style.display = 'none'
     padMemes.addSom(String(input_nome))
 
+    //criando botão e nó de texto
     div = document.createElement("div")
     paragrafo = document.createElement("p")
     texto_paragrafo = document.createTextNode(input_nome)
- 
+    
+    //colocando o nó de textp dentro de uma tag P e colocando a tag P dentro de uma tag DIV(o botão)
     paragrafo.appendChild(texto_paragrafo)
     div.appendChild(paragrafo)
     div.style.background = input_cor
     div.classList.toggle("btn-formatacao")
     const container_botoes = document.querySelector("div.container")
-    container_botoes.appendChild(div)
+    container_botoes.appendChild(div)//jogando o botão com seu texto no pad
 
+    //criando tag IMG
     imagem = document.createElement("img")
     imagem.classList.toggle("foto")
+    imagem.src = uploadImg
     const container_img = document.querySelector("div.imagens-container")
-    container_img.appendChild(imagem)
+    container_img.appendChild(imagem)//jogando tag IMG no container de imgs
 
+    //criando tag AUDIO
     audio = document.createElement("AUDIO")
-    audio.src = input_audio
-    audio.classList.toggle(input_nome)
+    audio.src = uploadAudio
+    audio.classList.toggle(input_nome)//colocando uma classe
     const container_sons = document.querySelector("div.sons-container")
-    container_sons.appendChild(audio)
-
+    container_sons.appendChild(audio)//jogando tag AUDIO no container de audios
+    window.alert("Função ainda em construção!")
     div.addEventListener("click", ()=>{
         tocar(div.className)
     })
