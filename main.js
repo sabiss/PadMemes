@@ -88,6 +88,7 @@ input_imagem.addEventListener("change", function(){
 })
 
 adicionar.addEventListener("click", ()=>{
+    window.alert("Função ainda em construção!")
     let input_nome = document.querySelector("input#nome").value//pegando valores dos inputs
     let input_cor = document.querySelector("input#cor").value
     
@@ -120,7 +121,7 @@ adicionar.addEventListener("click", ()=>{
     audio.classList.toggle(input_nome)//colocando uma classe
     const container_sons = document.querySelector("div.sons-container")
     container_sons.appendChild(audio)//jogando tag AUDIO no container de audios
-    window.alert("Função ainda em construção!")
+    
     div.addEventListener("click", ()=>{
         tocar(div.className)
     })
