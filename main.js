@@ -5,6 +5,12 @@ const corpo = document.querySelector("body");
 
 lista_sons = ['som-inez', 'som-flay', 'som-juliette', 'som-karol', 'som-regina', 'som-nadaAverIrmao', 'som-melody', 'som-juninhoCaldeirao', 'som-ygona']
 
+if(botoes.length > 9){
+    let index = botoes.length - 1
+    let novaDiv = document.querySelectorAll("div.bnt-formatacao")
+    novaDiv[index].addEventListener("click", tocar(novaDiv.className))
+}
+
 class Pad{
     constructor(botoes, sons, imagens, lista_nome_sons){
         this.botoes = botoes
@@ -59,7 +65,7 @@ function tocar(som){
         }
     }
 }
-const showForms = document.querySelector("div.botao-forms")
+/*const showForms = document.querySelector("div.botao-forms")
 const forms = document.querySelector("form")
 
 showForms.addEventListener("click", ()=>{
@@ -114,5 +120,4 @@ adicionar.addEventListener("click", (event)=>{
     const container_sons = document.querySelector("div.sons-container")
     container_sons.appendChild(audio)//jogando tag AUDIO no container de audios
 
-    addEventListener("click", tocar(input_nome))
-})
+})*/
